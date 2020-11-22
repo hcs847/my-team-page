@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-// const Files = require("./utils/generate-site");
+const Files = require("./utils/generate-site");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -109,28 +109,29 @@ class Team {
         action
       }) => {
         if (action === 'Add an engineer') {
-          // console.log("engineer");
+
           return this.addEngineer();
         } else if (action === 'Add an intern') {
-          // console.log("intern");
+
           return this.addIntern();
-        } else {
+        } else if (action === 'Finish building team') {
           console.log(this.teamMemebrs);
-          return this.teamMemebrs;
+          return new generatePage().addEmployeeCard(this.teamMemebrs);
+          // console.log(this.page);
+          // return this.page;
         }
       })
-      // .then(pageHTML => {
-      //   // this.page = new generatePage().addEmployeeCard(pageHTML);
-      //   // this.page = this.manager.renderCard(pageHTML);
-      //   // console.log(this.page);
-      //   console.log(pageHTML);
-      // })
+      .then(pageHTML => {
+        return new Files().writeFile(pageHTML);
+      })
+      .then(copyFileResponse => {
+        return new Files().copyFile(copyFileResponse);
+      })
       .catch(err => {
         console.log(err);
       });
   }
-
-
 };
 
 const team = new Team().addManager();
+
