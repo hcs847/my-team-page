@@ -24,6 +24,15 @@ class Team {
       type: "text",
       name: "email",
       message: `Please email address of the ${employeeType.getRole()}`,
+      validate: emailInput => {
+        const validEmail = /[^\W][\w\d-.]*@[\w\d]*.[\w]*/;
+        if (emailInput.match(validEmail)) {
+          return true;
+        } else {
+          console.log('\n', '>>> Please enter a valid email address.');
+          return false;
+        }
+      }
     }];
     return questions;
   };
@@ -44,8 +53,6 @@ class Team {
         } = answers;
         this.manager = new Manager(name, id, email, officeNumber);
         this.teamMemebrs.push(this.manager);
-        // console.log(this.teamMemebrs[0].id);
-
 
         // call the build team function
         this.buildTeam();
@@ -68,7 +75,6 @@ class Team {
         } = answers;
         this.intern = new Intern(name, id, email, school);
         this.teamMemebrs.push(this.intern);
-        // console.log(this.teamMemebrs);
 
         this.buildTeam();
       });
@@ -95,7 +101,6 @@ class Team {
       });
   };
 
-
   buildTeam() {
     inquirer
       .prompt({
@@ -117,8 +122,6 @@ class Team {
         } else if (action === 'Finish building team') {
           console.log(this.teamMemebrs);
           return new generatePage().addEmployeeCard(this.teamMemebrs);
-          // console.log(this.page);
-          // return this.page;
         }
       })
       .then(pageHTML => {

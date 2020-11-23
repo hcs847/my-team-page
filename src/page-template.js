@@ -37,7 +37,7 @@ class generatePage {
             return ''
         }
         return `
-            <p>github: ${github}</p>
+            <p>GitHub:  <a href="https://github.com/${github}" target="_blank">${github}</a></p>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ class generatePage {
             return ''
         }
         return `
-            <p>school: ${school}</p>
+            <p>School: ${school}</p>
             </div>
           </div>
         </div>
@@ -69,21 +69,21 @@ class generatePage {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./dist/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Our Team Page</title>
 </head>
 
 <body>
     <header class="banner">
-        <h1 class="main-header blue darken-4 grey-text text-lighten-5 center">Our Team</h1>
+        <h1 class="main-header blue darken-4 white-text center">Our Team</h1>
     </header>
 
-    <div class="row">
+    <div class="row container">
         ${teamMembers.map(({ name, id, email, officeNumber, github, school }, index, array) => {
             return `
-            <div class="col s6 m3 l3 push-l2">
-                <div class="card">
-                    <div class="card-title orange darken-4 grey-text text-lighten-5">
+            <div class="col s6 m5 l4">
+                <div class="card blue darken-5" id="card-style">
+                    <div class="card-title red darken-4 white-text">
                         <h6>
                         ${name}
                         </h6>
@@ -94,9 +94,9 @@ class generatePage {
                         </div>
                     </h6>
                 </div>
-                <div class="card-content card-list grey lighten-4">
-                    <p>ID:${id}</p>
-                    <p>email:${email}</p>
+                <div class="card-content card-list blue-grey lighten-5 blue-text text-darken-4">
+                    <p>ID: ${id}</p>
+                    <p>Email: <a href="mailto:${email}">${email}</a></p>
             
                     ${this.addOfficeNumber(officeNumber)}
                     ${this.addGitHub(github)}

@@ -44,29 +44,45 @@ p {
   margin-top: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
 .banner h1 {
   padding: 0.8rem;
   margin-bottom: 2rem;
+  margin-top: 0;
   line-height: 2;
+  font-size: 3rem;
 }
 
 /* CARDS */
 
+#card-style {
+  background-color: #0D47A1 !important;
+}
+
+.card .card-content {
+
+  border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.card .card-title {
+  border-radius: 0.6rem 0.6rem 0 0 !important;
+}
+
+
 .card-list p {
   background-color: white;
-  border: solid 0.0001rem lightgrey;
+  border: solid 0.0001rem lightgray;
   padding: 2%;
   margin: 0;
-  font-size: 0.9remrem;
+  font-size: 0.9rem;
   line-height: 2;
+  font-weight: 500;
 }
 
 .card-title h6 {
-  padding: 0.2rem 0.1rem 0.1rem 1.1rem;
+  padding: 0.35rem 0.1rem 0.15rem 1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  border-radius: 0.6rem 0.6rem 0 0;
 }
 
 .valign-wrapper span {
