@@ -14,14 +14,11 @@
   In order to produce this webpage for your team, after cloning the repo and running the npm install command from the terminal, run the node index command, answer the prompts with the relevant information for the different team members. 
   
   ## Usage
-  Stepts how to run the application are available in the following demo:<br>
-  ![](assets/images/my-team-demo.gif)<br>
-  A webpage produced from the demo above:<br>
+  Steps how to run the application are available in the following demo:<br>
+  ![](assets/images/my-team-page-demo.gif)<br><br>
+  
+  An example of a webpage produced from the demo above:<br>
   ![](./assets/images/demo-webpage.png)
-
-  
-
-  
   
  ## Questions
   
