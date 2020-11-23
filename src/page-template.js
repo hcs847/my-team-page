@@ -1,5 +1,5 @@
 class generatePage {
-
+    // render icons based on employee role
     addRole(role) {
         if (role === 'Manager') {
             return `
@@ -19,7 +19,7 @@ class generatePage {
         }
     }
 
-
+    // render office number for the manager
     addOfficeNumber(officeNumber) {
         if (!officeNumber) {
             return ''
@@ -32,6 +32,7 @@ class generatePage {
         `
     }
 
+    // render github user for engineers
     addGitHub(github) {
         if (!github) {
             return ''
@@ -44,6 +45,7 @@ class generatePage {
         `
     }
 
+    // render school for interns
     addSchool(school) {
         if (!school) {
             return ''
@@ -57,7 +59,7 @@ class generatePage {
     }
 
 
-
+    // employees card rendering
     addEmployeeCard(teamMembers) {
         return `
         <!DOCTYPE html>
@@ -82,7 +84,7 @@ class generatePage {
         ${teamMembers.map(({ name, id, email, officeNumber, github, school }, index, array) => {
             return `
             <div class="col s6 m5 l4">
-                <div class="card blue darken-5" id="card-style">
+                <div class="card" id="card-style">
                     <div class="card-title red darken-4 white-text">
                         <h6>
                         ${name}

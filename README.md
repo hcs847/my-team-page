@@ -15,8 +15,8 @@
   
   ## Usage
   Stepts how to run the application are available in the following demo:<br>
-
-  A webpage produced from the demo above:
+  ![](assets/images/my-team-demo.gif)<br>
+  A webpage produced from the demo above:<br>
   ![](./assets/images/demo-webpage.png)
 
   

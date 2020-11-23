@@ -46,7 +46,7 @@ p {
 
 .banner h1 {
   padding: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   margin-top: 0;
   line-height: 2;
   font-size: 3rem;
@@ -54,17 +54,17 @@ p {
 
 /* CARDS */
 
-#card-style {
-  border-radius: 0.6rem;
+.card {
+  border-radius: 0.5rem !important;
 }
-
-.card .card-content {
-
-  border-radius: 0.5rem 0.5rem 0 0 !important;
+.card .card-content p {
+  margin: 0.2rem;
+  border-radius: 0.5rem;
 }
 
 .card .card-title {
-  padding: 1.2rem !important;
+  padding: 0.2rem !important;
+  border-radius: 0.6rem 0.6rem 0 0;
 }
 
 
@@ -79,7 +79,7 @@ p {
 }
 
 .card-title h6 {
-  padding: 0.25rem 0.1rem 0.25rem 0.5rem;
+  padding: 0 0.1rem 0.25rem 0.5rem;
   font-weight: 700;
   margin-bottom: 0;
   border-radius: 0.6rem 0.6rem 0 0;

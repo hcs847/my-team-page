@@ -5,12 +5,13 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const generatePage = require("./src/page-template");
 
-
+// gathering information regarding the team
 class Team {
   constructor() {
     this.teamMemebrs = [];
   };
 
+  // common questions for all employee types 
   mainQuestions(employeeType) {
     const questions = [{
       type: "text",
@@ -24,6 +25,8 @@ class Team {
       type: "text",
       name: "email",
       message: `Please email address of the ${employeeType.getRole()}`,
+
+      // ensuring email address is in the right format
       validate: emailInput => {
         const validEmail = /[^\W][\w\d-.]*@[\w\d]*.[\w]*/;
         if (emailInput.match(validEmail)) {
@@ -37,6 +40,7 @@ class Team {
     return questions;
   };
 
+  // starting with gathering data regarding the manager
   addManager() {
     inquirer
       .prompt([...this.mainQuestions(Manager), {
@@ -54,11 +58,12 @@ class Team {
         this.manager = new Manager(name, id, email, officeNumber);
         this.teamMemebrs.push(this.manager);
 
-        // call the build team function
+        // call the build team function to check regarding next actions
         this.buildTeam();
       });
   };
 
+  // gathering information regarding interns
   addIntern() {
     inquirer
       .prompt([...this.mainQuestions(Intern), {
@@ -80,6 +85,7 @@ class Team {
       });
   };
 
+  // gathering information regarding engineer
   addEngineer() {
     inquirer
       .prompt([...this.mainQuestions(Engineer), {
@@ -101,6 +107,7 @@ class Team {
       });
   };
 
+  // checking what should be the next step
   buildTeam() {
     inquirer
       .prompt({
@@ -119,8 +126,7 @@ class Team {
         } else if (action === 'Add an intern') {
 
           return this.addIntern();
-        } else if (action === 'Finish building team') {
-          console.log(this.teamMemebrs);
+        } else {
           return new generatePage().addEmployeeCard(this.teamMemebrs);
         }
       })
