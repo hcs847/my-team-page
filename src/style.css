@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 700;
+  margin: 5px 0;
+  line-height: 2;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.banner h1 {
+  padding: 0.8rem;
+  margin-bottom: 3rem;
+  margin-top: 0;
+  line-height: 2;
+  font-size: 3rem;
+}
+
+/* CARDS */
+
+.card {
+  border-radius: 0.5rem !important;
+}
+.card .card-content p {
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+}
+
+.card .card-title {
+  padding: 0.2rem !important;
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+
+
+.card-list p {
+  background-color: white;
+  border: solid 0.0001rem lightgray;
+  padding: 2%;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 2;
+  font-weight: 500;
+}
+
+.card-title h6 {
+  padding: 0 0.1rem 0.25rem 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  border-radius: 0.6rem 0.6rem 0 0;
+  line-height: 1.1;
+  font-size: 1.3rem;
+}
+
+.valign-wrapper span {
+  padding-right: 0.4rem;
+  padding-left: 0;
+}
